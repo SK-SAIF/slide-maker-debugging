@@ -40,17 +40,13 @@ const getImages = (query) => {
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
-  
- 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
-    console.log("sliders=",sliders);
     element.classList.add('added');
   } else {
     sliders.splice(item,1);
-    console.log("sliders=",sliders);
-    element.classList.add('unselected');
+    element.classList.remove('added');
   }
 }
 var timer
@@ -73,6 +69,7 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
+  
   const duration = document.getElementById('duration').value || 1000;
   if(duration<0){
     alert("Sorry! duration time cannot be negative");
@@ -129,6 +126,7 @@ searchBtn.addEventListener('click', function () {
 })
 
 sliderBtn.addEventListener('click', function () {
+  document.getElementById("sliding-section").style.display="block";
   createSlider()
 })
 const input = document.getElementById("search");
@@ -148,4 +146,10 @@ function spinning(show){
     spinner.classList.add("d-none");
   }
   
+}
+function returnBtn(show){
+  if(show=true){
+    document.getElementById("sliding-section").style.display="none";
+    document.getElementById("images-section").style.display="block";  
+  }
 }

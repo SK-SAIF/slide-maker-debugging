@@ -33,7 +33,7 @@
       </div>
     </section>
 
-    <section class="images">
+    <section id="images-section" class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
         <div class="input-group col-md-3 mb-2 mb-md-0">
@@ -47,15 +47,20 @@
     </section>
    
     <!-- slider -->
-    <div class="main">
-      <section class="mt-5" id="sliders">
-
-      </section>
-      <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
-        <span class="dot" onclick="changeItem(-1)"></span>
-        <span class="dot" onclick="changeItem(1)"></span>
+    <section id="sliding-section">
+      <div class="main">
+        <section class="mt-5" id="sliders">
+  
+        </section>
+        <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
+          <span class="dot" onclick="changeItem(-1)"></span>
+          <span class="dot" onclick="changeItem(1)"></span>
+        </div>
+        <div class=" d-flex justify-content-center">
+          <button id="return" onclick="returnBtn(true)" class="btn btn-primary">Return</button>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
   <!-- Optional JavaScript -->
   <script src="./app.js"></script>
